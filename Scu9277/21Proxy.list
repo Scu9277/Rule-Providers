@@ -2,7 +2,8 @@
 # 数量：7条
 DOMAIN,htx.com
 DOMAIN,bybit.com
-DOMAIN,pionex.com
+DOMAIN-KEYWORD,pionex
 DOMAIN,binance.com
 DOMAIN,live.services.trading212.com
 IP-CIDR,118.193.240.37/32,no-resolve
+DOMAIN,dns.alidns.com,REJECT

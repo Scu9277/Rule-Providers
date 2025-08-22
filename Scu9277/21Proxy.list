@@ -1,9 +1,8 @@
 # 内容：21Proxy
 # 数量：7条
-DOMAIN,htx.com
-DOMAIN,bybit.com
+DOMAIN-KEYWORD,htx
+DOMAIN-KEYWORD,bybit
 DOMAIN-KEYWORD,pionex
 DOMAIN,binance.com
-DOMAIN,live.services.trading212.com
+DOMAIN-KEYWORD,trading212
 IP-CIDR,118.193.240.37/32,no-resolve
-DOMAIN,dns.alidns.com,REJECT

@@ -5,4 +5,8 @@ DOMAIN-KEYWORD,bybit
 DOMAIN-KEYWORD,pionex
 DOMAIN,binance.com
 DOMAIN-KEYWORD,trading212
+DOMAIN-KEYWORD,voice
+DOMAIN-KEYWORD,telephony
+DOMAIN-KEYWORD,goog
+DOMAIN,voice.telephony.goog
 IP-CIDR,118.193.240.37/32,no-resolve

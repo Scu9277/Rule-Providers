@@ -10,4 +10,5 @@ DOMAIN-KEYWORD,telephony
 DOMAIN-KEYWORD,goog
 DOMAIN,voice.telephony.goog
 DOMAIN-KEYWORD,oyunfor
+DOMAIN-KEYWORD,iyzico
 IP-CIDR,118.193.240.37/32,no-resolve

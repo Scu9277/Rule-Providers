@@ -17,3 +17,5 @@ DOMAIN-KEYWORD,gamma
 DOMAIN-KEYWORD,poshmark
 DOMAIN-KEYWORD,mercari
 IP-CIDR,118.193.240.37/32,no-resolve
+IP-CIDR,23.237.2.76/32,no-resolve
+

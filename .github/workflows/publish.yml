@@ -22,26 +22,27 @@ jobs:
           # 移除了过时的 with_ech 标签
           go install -v -tags "with_quic,with_grpc,with_dhcp,with_wireguard,with_shadowsocksr,with_utls,with_clash_api" github.com/sagernet/sing-box/cmd/sing-box@latest
 
-      # --- 这里是修改后的地方 ---
       - name: Compile Rule-set
         run: |
           # 进入 sing-box 目录
           cd sing-box
           
           # 1. 为 proxy.list 创建一个临时的 JSON 配置文件
-          #    告诉编译器去读取 "proxy.list" 这个本地(local)文本(text)文件
           echo '{"type":"local","format":"text","path":"proxy.list"}' > proxy.json
           
+          # --- 这里是修改后的地方 ---
           # 2. 使用新命令编译 proxy.list
+          #    注意：proxy.json 是作为 [source-path] 参数，而不是 --config 标志
           echo "Compiling proxy.list..."
-          sing-box rule-set compile --config proxy.json --output proxy.srs
+          sing-box rule-set compile proxy.json --output proxy.srs
           
           # 3. 为 lan.list 创建临时的 JSON 配置文件
           echo '{"type":"local","format":"text","path":"lan.list"}' > lan.json
           
           # 4. 使用新命令编译 lan.list
           echo "Compiling lan.list..."
-          sing-box rule-set compile --config lan.json --output lan.srs
+          sing-box rule-set compile lan.json --output lan.srs
+          # -------------------------
 
       - name: Commit and Push
         uses: stefanzweifel/git-auto-commit-action@v4

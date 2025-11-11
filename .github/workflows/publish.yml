@@ -15,7 +15,9 @@ jobs:
       - name: Setup Sing-box
         uses: actions/setup-go@v4
         with:
-          go-version: '1.20'
+          # --- 这里是修改后的地方 ---
+          go-version: '1.23' # 使用 Go 1.23 版本来编译
+          # -------------------------
       - run: go install -v -tags with_quic,with_grpc,with_dhcp,with_wireguard,with_shadowsocksr,with_ech,with_utls,with_clash_api github.com/sagernet/sing-box/cmd/sing-box@latest
 
       - name: Compile Rule-set
@@ -35,5 +37,5 @@ jobs:
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
           commit_message: Auto compile rule-set
-          # 关键：指定要提交的 srs 文件在 sing-box 目录下
+          # 提交 sing-box 目录下的 .srs 文件
           file_pattern: 'sing-box/*.srs'

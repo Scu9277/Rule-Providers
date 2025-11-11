@@ -5,6 +5,11 @@ on:
       - 'sing-box/*.list' # 监听 sing-box 文件夹下的 .list 文件变动
   workflow_dispatch:
 
+# --- 这里是新添加的地方 ---
+permissions:
+  contents: write # 授予 'git push' 的权限
+# -------------------------
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -21,7 +26,6 @@ jobs:
         run: |
           go install -v -tags "with_quic,with_grpc,with_dhcp,with_wireguard,with_shadowsocksr,with_utls,with_clash_api" github.com/sagernet/sing-box/cmd/sing-box@latest
 
-      # --- 这是根据你提供的文档修改的关键步骤 ---
       - name: Compile Rule-set
         run: |
           # 进入 sing-box 目录
@@ -35,10 +39,12 @@ jobs:
           # 2. 读取 proxy.list，跳过空行和注释
           #    将 suffix:example.com 转换成 {"domain_suffix":"example.com"}
           #    将 keyword:example 转换成 {"domain_keyword":"example"}
+          #    将 1.2.3.4/24 转换成 {"ip_cidr":"1.2.3.4/24"}
           #    将 example.com (或其他) 转换成 {"domain":"example.com"}
           awk -F: '!/^#/ && NF > 0 { \
             if ($1 == "suffix") { printf "{\"domain_suffix\":\"%s\"},", $2 } \
             else if ($1 == "keyword") { printf "{\"domain_keyword\":\"%s\"},", $2 } \
+            else if ($0 ~ /^[0-9]/) { printf "{\"ip_cidr\":\"%s\"},", $0 } \
             else { printf "{\"domain\":\"%s\"},", $0 } \
           }' proxy.list | sed 's/,$//' >> proxy.json # sed 's/,$//' 删除最后一个多余的逗号
           
@@ -58,6 +64,7 @@ jobs:
           awk -F: '!/^#/ && NF > 0 { \
             if ($1 == "suffix") { printf "{\"domain_suffix\":\"%s\"},", $2 } \
             else if ($1 == "keyword") { printf "{\"domain_keyword\":\"%s\"},", $2 } \
+            else if ($0 ~ /^[0-9]/) { printf "{\"ip_cidr\":\"%s\"},", $0 } \
             else { printf "{\"domain\":\"%s\"},", $0 } \
           }' lan.list | sed 's/,$//' >> lan.json
           

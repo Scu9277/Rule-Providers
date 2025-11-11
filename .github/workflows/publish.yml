@@ -28,15 +28,15 @@ jobs:
           cd sing-box
           
           # --- 这里是修改后的地方 ---
-          # 1. 为 proxy.list 创建一个临时的 JSON 配置文件 (增加了 "version":1)
-          echo '{"version":1,"type":"local","format":"text","path":"proxy.list"}' > proxy.json
+          # 1. 为 proxy.list 创建一个临时的 JSON 配置文件 (移除了 "type":"local")
+          echo '{"version":1,"format":"text","path":"proxy.list"}' > proxy.json
           
           # 2. 使用新命令编译 proxy.list
           echo "Compiling proxy.list..."
           sing-box rule-set compile proxy.json --output proxy.srs
           
-          # 3. 为 lan.list 创建临时的 JSON 配置文件 (增加了 "version":1)
-          echo '{"version":1,"type":"local","format":"text","path":"lan.list"}' > lan.json
+          # 3. 为 lan.list 创建临时的 JSON 配置文件 (移除了 "type":"local")
+          echo '{"version":1,"format":"text","path":"lan.list"}' > lan.json
           
           # 4. 使用新命令编译 lan.list
           echo "Compiling lan.list..."
@@ -47,5 +47,5 @@ jobs:
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
           commit_message: Auto compile rule-set
-          # S 提交 sing-box 目录下的 .srs 文件
+          # 提交 sing-box 目录下的 .srs 文件
           file_pattern: 'sing-box/*.srs'

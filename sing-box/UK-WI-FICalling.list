@@ -1,4 +1,6 @@
-
-suffix:m.ee.co.uk
-keyword:uk
-suffix:ee.co.uk
+keyword:ee.co.uk
+suffix:epdg.epc.mnc033.mcc234.pub.3gppnetwork.org
+keyword:mnc033.mcc234.pub.3gppnetwork.org
+keyword:3gppnetwork.org
+ip:31.94.76.6/32
+ip:31.94.76.9/32

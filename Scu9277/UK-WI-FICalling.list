@@ -1,20 +1,23 @@
-DOMAIN-KEYWORD,ee.co.uk
-DOMAIN,epdg.epc.mnc033.mcc234.pub.3gppnetwork.org
-DOMAIN-KEYWORD,mnc033.mcc234.pub.3gppnetwork.org
-DOMAIN-KEYWORD,3gppnetwork.org
+# EE WiFi Calling Rules for Mihomo (Clash Meta)
 
-IP-CIDR,31.94.76.6/32
-IP-CIDR,31.94.76.9/32
-IP-CIDR,31.94.76.0/24
-
-
-# EE WiFi Calling Rules
-  # 域名规则（推荐）
-DOMAIN-SUFFIX,3gppnetwork.org
+# ePDG 服务器域名 - 精确匹配
 DOMAIN,epdg.epc.mnc030.mcc234.pub.3gppnetwork.org
 DOMAIN,epdg.epc.mnc033.mcc234.pub.3gppnetwork.org
-  
-  # IP 规则（备选）
+
+# 3GPP 网络域名 - 后缀匹配（推荐）
+DOMAIN-SUFFIX,3gppnetwork.org
+
+# 备选：关键词匹配（可选，如果上面的规则不够用）
+# DOMAIN-KEYWORD,mnc030.mcc234
+# DOMAIN-KEYWORD,mnc033.mcc234
+
+# EE 官网（可选，用于认证检测）
+DOMAIN-SUFFIX,ee.co.uk
+
+# EE ePDG 服务器 IP 地址
+IP-CIDR,31.94.76.0/24
+IP-CIDR,31.94.76.6/32
+IP-CIDR,31.94.76.9/32
 IP-CIDR,109.249.128.0/18
 IP-CIDR,46.68.57.0/24
 IP-CIDR,46.68.58.0/24

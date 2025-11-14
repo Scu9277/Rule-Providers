@@ -1,6 +1,20 @@
-keyword:ee.co.uk
+# EE WiFi Calling Rules
+# 运营商官网域名
+suffix:ee.co.uk
+
+# ePDG 服务器域名（完整域名匹配）
+suffix:epdg.epc.mnc030.mcc234.pub.3gppnetwork.org
 suffix:epdg.epc.mnc033.mcc234.pub.3gppnetwork.org
-keyword:mnc033.mcc234.pub.3gppnetwork.org
+
+# 3GPP 网络域名（关键词匹配）
 keyword:3gppnetwork.org
+keyword:mnc030.mcc234
+keyword:mnc033.mcc234
+
+# EE ePDG 服务器 IP 地址
+ip:109.249.128.0/18
+ip:46.68.57.0/24
+ip:46.68.58.0/24
+ip:46.68.59.0/24
 ip:31.94.76.6/32
 ip:31.94.76.9/32

@@ -6,3 +6,16 @@ DOMAIN-KEYWORD,3gppnetwork.org
 IP-CIDR,31.94.76.6/32
 IP-CIDR,31.94.76.9/32
 IP-CIDR,31.94.76.0/24
+
+
+# EE WiFi Calling Rules
+  # 域名规则（推荐）
+DOMAIN-SUFFIX,3gppnetwork.org
+DOMAIN,epdg.epc.mnc030.mcc234.pub.3gppnetwork.org
+DOMAIN,epdg.epc.mnc033.mcc234.pub.3gppnetwork.org
+  
+  # IP 规则（备选）
+IP-CIDR,109.249.128.0/18
+IP-CIDR,46.68.57.0/24
+IP-CIDR,46.68.58.0/24
+IP-CIDR,46.68.59.0/24

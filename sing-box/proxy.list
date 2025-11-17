@@ -1,4 +1,5 @@
-# 我想让这些网站走代理
+# proxy
 suffix:trading212.com
 keyword:trading212
 suffix:bybit.eu
+suffix:nodeseek.com

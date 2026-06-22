@@ -54,3 +54,12 @@ IP-CIDR,3.230.129.93/32,no-resolve
 IP-CIDR,3.211.157.115/32,no-resolve
 IP-CIDR,54.160.93.182/32,no-resolve
 IP-CIDR,54.237.226.164/32,no-resolve
+# 内容：Netshort短视频
+# 数量：7条
+DOMAIN-KEYWORD,netshort
+DOMAIN-SUFFIX,netshort.tv
+DOMAIN-KEYWORD,reelshort
+DOMAIN-KEYWORD,shortmax
+DOMAIN-KEYWORD,dramabox
+DOMAIN-KEYWORD,topshort
+IP-CIDR,13.224.0.0/14,no-resolve

@@ -87,6 +87,7 @@ DOMAIN-SUFFIX,cdninstagram.com
 DOMAIN-SUFFIX,instagram.com
 DOMAIN-SUFFIX,whatsapp.com
 DOMAIN-SUFFIX,whatsapp.net
+DOMAIN-SUFFIX,metaaivm.com
 # Meta 边缘节点兜底（域名未放行时按 IP 兜底）
 IP-CIDR,157.240.0.0/16,no-resolve
 IP-CIDR,57.144.0.0/14,no-resolve

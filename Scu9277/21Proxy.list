@@ -67,3 +67,27 @@ DOMAIN-KEYWORD,shortmax
 DOMAIN-KEYWORD,dramabox
 DOMAIN-KEYWORD,topshort
 IP-CIDR,13.224.0.0/14,no-resolve
+# 内容：Muse (Meta AI) —— App 分流
+# 数量：17条（14 条域名 + 3 条 IP 兜底）
+# 说明：核心缺口是 muse.ai，它未被任何 ruleset 命中，会落到 MATCH→漏网之鱼(DIRECT) 而超时。
+#       meta.ai 是在 ProxyMedia 命中，meta.com/facebook.com/fbcdn.net 在 ProxyGFWlist 命中，
+#       这里统一收敛到 21Proxy 组，保证同一会话出口 IP 一致。
+#       注意：不要用 DOMAIN-KEYWORD,muse —— muse.com / muse.io / museapp.com 是无关站点。
+DOMAIN-SUFFIX,muse.ai
+DOMAIN-SUFFIX,meta.ai
+DOMAIN-SUFFIX,meta.com
+DOMAIN-SUFFIX,facebook.com
+DOMAIN-SUFFIX,fbcdn.net
+DOMAIN-SUFFIX,fbsbx.com
+DOMAIN-SUFFIX,messenger.com
+DOMAIN-SUFFIX,oculus.com
+DOMAIN-SUFFIX,threads.com
+DOMAIN-SUFFIX,threads.net
+DOMAIN-SUFFIX,cdninstagram.com
+DOMAIN-SUFFIX,instagram.com
+DOMAIN-SUFFIX,whatsapp.com
+DOMAIN-SUFFIX,whatsapp.net
+# Meta 边缘节点兜底（域名未放行时按 IP 兜底）
+IP-CIDR,157.240.0.0/16,no-resolve
+IP-CIDR,57.144.0.0/14,no-resolve
+IP-CIDR,31.13.24.0/21,no-resolve
